@@ -14,8 +14,8 @@ This project is an API for managing a customer database. It has been developed u
 ## Installation
 ### Clone the repository to your local machine:
 ```
-git clone https://github.com/imarshev/sinatra_customers_management_api.git
-cd sinatra_customers_management_api
+git clone https://github.com/vxd/order_payments_service.git
+cd order_payments_service
 ```
 ## Running the Application
 
@@ -34,7 +34,11 @@ bundle exec rake db:create
 ```
 bundle exec rake db:migrate
 ```
-5. Run the app:
+5. Test the app:
+```
+bundle exec rspec
+```
+6. Run the app:
 ```
 bundle exec rackup -o 0.0.0.0 -p 4567
 ```
@@ -71,4 +75,21 @@ curl -X GET -H "X-Api-Key: your_api_key" http://localhost:4567/customers/1
 ```
 
 
+4. Create new order:
+```
+curl -X POST -H "Content-Type: application/json" -H "X-Api-Key: your_api_key" -d '[{"total": 1000, "user_id": 1 }, {"total": 2000, "user_id": 1 }]' http://localhost:4567/orders
+```
+2. Get a list of all order:
+```
+curl -X GET -H "X-Api-Key: your_api_key" http://localhost:4567/orders
+```
+you also can set page and per_page query parameters:
+```
+curl -X GET -H "X-Api-Key: your_api_key" http://localhost:4567/orders?page=1&per_page=1
+```
+
+3. Get order information by ID:
+```
+curl -X GET -H "X-Api-Key: your_api_key" http://localhost:4567/orders/1
+```
 
