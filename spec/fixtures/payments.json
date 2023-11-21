@@ -1,0 +1,12 @@
+[
+  {
+    "state": 'unpaid',
+    "payment_service": 'SberPay',
+    "order_id": 1
+  },
+  {
+    "state": 'paid',
+    "payment_service": 'Qiwi',
+    "order_id": 2
+  }
+]
