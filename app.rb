@@ -18,7 +18,6 @@ class MyApp < Sinatra::Base
   register Sinatra::ActiveRecordExtension
 
   helpers RequestHelper
-  # helpers ResponseHelper
 
   configure do
     db_options = {

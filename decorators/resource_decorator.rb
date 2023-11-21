@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ResourceDecorator < Draper::Decorator
-  def url(_id)
+  def url
     ENV.fetch('BASE_URL', 'http://localhost').to_s
   end
 end
